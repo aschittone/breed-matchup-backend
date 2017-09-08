@@ -4,6 +4,9 @@ Rails.application.routes.draw do
     namespace :v1 do
        # get '/get_traits', to: "personality#get_traits"
        post '/get_traits', to: "personality#get_traits"
+       post '/get_breed', to: "breed#get_dogs"
+
+
     end
   end
 
