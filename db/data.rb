@@ -1,19 +1,4 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-require 'byebug'
-
-data = [
-  {"TOY FOX TERRIER":
-    "Toy Fox Terriers are outgoing and friendly, yet fiercely loyal to their families."}
-]
-
-
-data2 = [
+[
   {"NEAPOLITAN MASTIFF":
   "Watchful and dignified; sweet, steady, and loyal with loved ones, calm but wary with strangers."},
 
@@ -232,17 +217,5 @@ data2 = [
 
   {"TREEING WALKER COONHOUND":
   "Smart, brave, and often described as sensible and courteous."}
-]
 
-data2.each do |dog|
-  dog.each do |dog_name, description|
-    name = ''
-    # if dog_name.to_s.split(' ').length > 1
-      array = dog_name.to_s.split(' ').reverse
-      array.each do |word|
-        name += word + '/'
-      end
-    # end
-    Breed.create(name: name, description: description)
-  end
-end
+]
