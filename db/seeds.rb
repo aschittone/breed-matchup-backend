@@ -7,12 +7,6 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'byebug'
 
-data = [
-  {"TOY FOX TERRIER":
-    "Toy Fox Terriers are outgoing and friendly, yet fiercely loyal to their families."}
-]
-
-
 data2 = [
   {"NEAPOLITAN MASTIFF":
   "Watchful and dignified; sweet, steady, and loyal with loved ones, calm but wary with strangers."},
@@ -59,10 +53,6 @@ data2 = [
 
   {"PERUVIAN INCA ORCHID":
   "Lively, alert, playful; charming and well mannered around the house."},
-
-
-  {"PETIT BASSET GRIFFON VENDEEN":
-  "Alert, vivacious, and happy-happy-happy!"},
 
 
   {"PHARAOH HOUND":
@@ -236,13 +226,21 @@ data2 = [
 
 data2.each do |dog|
   dog.each do |dog_name, description|
-    name = ''
-    # if dog_name.to_s.split(' ').length > 1
-      array = dog_name.to_s.split(' ').reverse
-      array.each do |word|
-        name += word + '/'
-      end
-    # end
-    Breed.create(name: name, description: description)
+    Breed.create(name: dog_name, description: description)
   end
 end
+
+
+
+# data2.each do |dog|
+#   dog.each do |dog_name, description|
+#     name = ''
+#     # if dog_name.to_s.split(' ').length > 1
+#       array = dog_name.to_s.split(' ').reverse
+#       array.each do |word|
+#         name += word + '/'
+#       end
+#     # end
+#     Breed.create(name: name, description: description)
+#   end
+# end
