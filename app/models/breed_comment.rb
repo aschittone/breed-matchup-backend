@@ -1,2 +1,0 @@
-class BreedComment < ApplicationRecord
-end
