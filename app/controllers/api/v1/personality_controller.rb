@@ -5,7 +5,7 @@ class Api::V1::PersonalityController < ApplicationController
 
 
   def get_traits
-    byebug
+    # byebug
     page = HTTParty.get(input_params[:input])
     parse_page = Nokogiri::HTML(page)
     content = parse_page.css('.section-inner.sectionLayout--insetColumn').text

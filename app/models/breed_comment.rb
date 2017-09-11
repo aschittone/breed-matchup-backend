@@ -1,0 +1,2 @@
+class BreedComment < ApplicationRecord
+end
