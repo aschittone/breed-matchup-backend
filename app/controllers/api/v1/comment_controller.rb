@@ -4,8 +4,9 @@ class Api::V1::CommentController < ApplicationController
     breed = Breed.find_by(name: comment_params[:breed])
     comment = Comment.create(text: comment_params[:input], breed_id: breed.id)
     render json: comment
-
   end
+
+
 
   def show
     breed = Breed.find_by(name: find_dog_params[:id])
@@ -14,7 +15,6 @@ class Api::V1::CommentController < ApplicationController
   end
 
   def destroy
-  
     comment = Comment.find_by(text: delete_comment_params[:comment])
     comment.destroy
     breed = Breed.find_by(name: delete_comment_params[:dog])
