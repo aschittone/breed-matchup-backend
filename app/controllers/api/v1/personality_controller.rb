@@ -1,8 +1,12 @@
-require 'json'
-require 'excon'
+# require 'json'
+# require 'excon'
 
 class Api::V1::PersonalityController < ApplicationController
 
+
+  def index
+    render json: Breed.all
+  end 
 
   def get_traits
     # byebug

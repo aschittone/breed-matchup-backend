@@ -1,5 +1,4 @@
-require 'Nokogiri'
-require 'HTTParty'
+# require 'HTTParty'
 
 class Api::V1::BreedController < ApplicationController
 
