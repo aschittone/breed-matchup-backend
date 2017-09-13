@@ -6,7 +6,6 @@ class Api::V1::BlogController < ApplicationController
   def get_blogs
     page = HTTParty.get("https://medium.com/@#{input_params[:input]}")
     parse_page = Nokogiri::HTML(page)
-    # byebug
     titles = []
     counter = 0
     parse_page.css('.graf--title').css('h3').each do |title|
@@ -25,18 +24,15 @@ class Api::V1::BlogController < ApplicationController
     else
       render json: titles
     end
-    # byebug
 
   end
 
   def get_first_sentence(array, noko_objects)
     new_objects = noko_objects[0..2]
-    # byebug
     new_array = []
     counter = -1
     new_objects.each_with_index do |sentence, index|
       counter += 1
-      # byebug
       array[index].each do |key, value|
         new_array << {key => value}
         if counter == index
