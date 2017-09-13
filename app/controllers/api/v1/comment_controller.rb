@@ -22,6 +22,14 @@ class Api::V1::CommentController < ApplicationController
     render json: comments
   end
 
+  def update
+    comment = Comment.find_by(text: update_comment_params[:oldText])
+    comment.update(text: update_comment_params[:input])
+    breed = Breed.find_by(name: update_comment_params[:breed])
+    comments = breed.comments
+    render json: comments
+  end
+
 
   private
 
@@ -36,4 +44,9 @@ class Api::V1::CommentController < ApplicationController
   def delete_comment_params
     params.permit(:comment, :dog)
   end
+
+  def update_comment_params
+    params.require(:userInput).permit(:input, :breed, :oldText)
+  end
+
 end

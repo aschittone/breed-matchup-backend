@@ -9,7 +9,7 @@ Rails.application.routes.draw do
        post '/comments', to: "comment#create"
        get '/dog/comments/:id', to: "comment#show"
        delete '/dog/comments/:dog/:comment', to: "comment#destroy"
-
+       patch '/dog/comments/:dog/:comment', to: "comment#update"
 
 
     end

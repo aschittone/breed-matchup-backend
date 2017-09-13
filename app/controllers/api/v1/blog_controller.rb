@@ -17,8 +17,25 @@ class Api::V1::BlogController < ApplicationController
         end
       end
     end
-    render json: titles
+    noko_objects = parse_page.css('.graf.graf--p.graf-after--h3.graf--trailing')
+    result = get_first_sentence(titles, noko_objects)
 
+    render json: result
+  end
+
+  def get_first_sentence(array, noko_objects)
+    new_array = []
+    counter = -1
+    noko_objects.each_with_index do |sentence, index|
+      counter += 1
+      array[index].each do |key, value|
+        new_array << {key => value}
+        if counter == index
+          new_array[index][key] << sentence.text
+        end
+      end
+    end
+    new_array
   end
 
   private
