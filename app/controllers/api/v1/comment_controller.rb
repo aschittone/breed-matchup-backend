@@ -6,8 +6,6 @@ class Api::V1::CommentController < ApplicationController
     render json: comment
   end
 
-
-
   def show
     breed = Breed.find_by(name: find_dog_params[:id])
     comments = breed.comments
