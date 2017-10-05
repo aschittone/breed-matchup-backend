@@ -1,24 +1,22 @@
-# README
+Overview
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The main focus of this app is to analyze a users writing style to dtermine personality traits, to later match up with a dog breed that will fit well with them. This app uses web scraping to retreive blog post text for medium.com users. It then sends the text to IBM's Watson personality insights API to retrieve percentiales for the traits, independence, confidence, energy, and focus. The trait with the highest percentile is then used to find dog breeds that match.
 
-Things you may want to cover:
+Project Demo
 
-* Ruby version
+https://breed-matchup.herokuapp.com/
 
-* System dependencies
+Main Features/flow
 
-* Configuration
+- user is able to type in their MEDIUM username
+- nokogiri ruby gem used to scrape for text of meduim blog post
+- blog text is then sent to watson personality api to analyze 
+- based on watson results, top personality traits are matched up with descriptsion of dog in database
+Languages & tools
 
-* Database creation
+JavaScript
+  - React.JS 
+  - React Router 
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+HTML & CSS
+  - Semantic UI React 
