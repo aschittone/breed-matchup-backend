@@ -6,8 +6,16 @@ Main Features/flow
 
 - nokogiri ruby gem used to scrape for text of meduim blog post
 - Watson personality insights API used 
-- 
 
 Languages & tools
-
   - Ruby on Rails
+
+Database
+  - PostgreSQL
+
+External APIs
+  - Watson personality insights API used 
+
+Key Gems
+	- excon (for fetch to external APIs)
+  - Nokogiri (web scraping)
